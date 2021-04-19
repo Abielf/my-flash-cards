@@ -1,11 +1,7 @@
 
 # Abe made a thing!
 Specifically, Abe made a little rinky-dink flash card app using react. 
-Below is some general info about react, but once you have the app running in browser
-it's pretty straightforward. If you want to add more questions, then
-alter the data.js file.
-
-
+Below is some general info about react, but I'm pretty sure intellij will automatically prompt you to install the NPM upon opening the project. If you want to add more questions, then alter the data.js file.
 
 
 
