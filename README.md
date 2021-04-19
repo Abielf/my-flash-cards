@@ -1,9 +1,13 @@
 
-#Abe made a thing!
-Specifically, a little rinky-dink flash card app made in react. 
+# Abe made a thing!
+Specifically, Abe made a little rinky-dink flash card app using react. 
 Below is some general info about react, but once you have the app running in browser
 it's pretty straightforward. If you want to add more questions, then
 alter the data.js file.
+
+
+
+
 
 
 # Getting Started with Create React App
