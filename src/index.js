@@ -23,21 +23,36 @@ class FlashCards extends React.Component{
             answerShown: !this.state.answerShown,
         });
     }
+    randClick(){
+        const rand=Math.floor(Math.random()*241)
+        this.setState({
+            jsonIndex:rand,
+            shownCard : "Define "+flashQuestionsTest.Cards[rand].front,
+            answerShown: false,
+        });
+    }
+    nextClick(){
+        const next=this.state.jsonIndex+1;
+        this.setState({
+            jsonIndex:next,
+            shownCard : "Define "+flashQuestionsTest.Cards[next].front,
+            answerShown: false,
+        });
+    }
     render(){
         const status = 'Showing the ' + (this.state.answerShown ? 'Answer' : 'Question');
         const index = this.state.jsonIndex;
         return(
             <div className="flash">
+                <div><button onClick={() => this.randClick()}>Randomize Card</button></div>
+                <div><button onClick={() => this.nextClick()}>Next Card</button></div>
                 <div className="status">{status}</div>
-                    <button onClick={() => this.handleClick()}>
+                    <div><button className="question" onClick={() => this.handleClick()}>
                         {this.state.shownCard}
-                    </button>
-
+                    </button></div>
             </div>);
         }
 }
-
-
 
 // ========================================
 

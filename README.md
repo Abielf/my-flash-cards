@@ -1,3 +1,11 @@
+
+#Abe made a thing!
+Specifically, a little rinky-dink flash card app made in react. 
+Below is some general info about react, but once you have the app running in browser
+it's pretty straightforward. If you want to add more questions, then
+alter the data.js file.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
