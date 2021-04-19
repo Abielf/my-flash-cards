@@ -1,17 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {flashQuestionsTest} from "./data";
+
+
+
+class FlashCards extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            cards: flashQuestionsTest,
+            shownCard: "Define "+flashQuestionsTest.Cards[0].front,
+            answerShown: false,
+            jsonIndex:0,
+        };
+    }
+    handleClick() {
+        const index=this.state.jsonIndex;
+        const value = this.state.answerShown ? "Define "+this.state.cards.Cards[index].front : this.state.cards.Cards[index].back;
+        this.setState({
+            shownCard : value,
+            answerShown: !this.state.answerShown,
+        });
+    }
+    render(){
+        const status = 'Showing the ' + (this.state.answerShown ? 'Answer' : 'Question');
+        const index = this.state.jsonIndex;
+        return(
+            <div className="flash">
+                <div className="status">{status}</div>
+                    <button onClick={() => this.handleClick()}>
+                        {this.state.shownCard}
+                    </button>
+
+            </div>);
+        }
+}
+
+
+
+// ========================================
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <FlashCards />,
+    document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
