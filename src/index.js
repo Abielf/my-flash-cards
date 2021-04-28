@@ -32,10 +32,18 @@ class FlashCards extends React.Component{
         });
     }
     nextClick(){
-        const next=this.state.jsonIndex+1;
+        const next=this.state.jsonIndex!==240 ? this.state.jsonIndex+1:240;
         this.setState({
             jsonIndex:next,
             shownCard : "Define "+flashQuestionsTest.Cards[next].front,
+            answerShown: false,
+        });
+    }
+    prevClick(){
+        const prev= this.state.jsonIndex!==0 ? this.state.jsonIndex-1:0;
+        this.setState({
+            jsonIndex:prev,
+            shownCard : "Define "+flashQuestionsTest.Cards[prev].front,
             answerShown: false,
         });
     }
@@ -44,8 +52,9 @@ class FlashCards extends React.Component{
         const index = this.state.jsonIndex;
         return(
             <div className="flash">
-                <div><button onClick={() => this.randClick()}>Randomize Card</button></div>
-                <div><button onClick={() => this.nextClick()}>Next Card</button></div>
+                <h2>Let's prepare for Tech interviews!</h2>
+                <div><button className="changeCard" onClick={() => this.randClick()}>Randomize Card</button></div>
+                <div><button className="changeCard" onClick={() => this.prevClick()}>Previous Card</button><button className="changeCard" onClick={() => this.nextClick()}>Next Card</button></div>
                 <div className="status">{status}</div>
                     <div><button className="question" onClick={() => this.handleClick()}>
                         {this.state.shownCard}

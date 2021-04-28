@@ -3,42 +3,24 @@ body {
     margin: 20px;
 }
 
-ol, ul {
-    padding-left: 30px;
-}
-
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
 .status {
     margin-bottom: 10px;
     padding: 10px;
+    font-weight: bold;
 }
+
+.changeCard{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
 
 .question {
     font-size: 20px;
     padding: 20px;
 }
 
-.square:focus {
-    outline: none;
-}
 
-.kbd-navigation .square:focus {
-    background: #ddd;
-}
-
-.game {
-    display: flex;
-    flex-direction: row;
-}
-
-.game-info {
-    margin-left: 20px;
-}
 
 .flash{
     padding-left: 3em;
